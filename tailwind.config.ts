@@ -8,9 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Source Sans Pro"', 'ui-sans-serif', 'system-ui'], 
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "orange-default": "#F36C21",
+        "gray-700": "#374151",
+        "grady-300": "#D0D5D8",
+        "gray-200": "#EDF1F4"
       },
     },
   },
