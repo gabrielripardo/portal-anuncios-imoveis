@@ -1,12 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import SelectLocation from "./SelectLocation";
+import Place from "../models/place.model";
 
 const FormSearch = () => {
   const [localization, setLocalization] = useState<string>("");
 
   const handleChangeLoc = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocalization(event.target.value);
+  };
+
+  const selectPlace = (place: Place) => {
+    setLocalization(`${place.name} - ${place.state.shortname}`);
   };
 
   return (
@@ -31,10 +37,17 @@ const FormSearch = () => {
               type="text"
               id="location"
               placeholder="Qual é a localização?"
-              className="w-full bg-transparent p-2 rounded-md focus:outline-none"
+              className="w-full bg-transparent p-2 rounded-md focus:outline-none overflow-hidden text-ellipsis whitespace-nowrap"
               onChange={handleChangeLoc}
               value={localization}
             />
+
+            {localization != "" && (
+              <SelectLocation
+                onSelectPlace={selectPlace}
+                keyword={localization}
+              />
+            )}
           </div>
           <hr className="bg-gray-300 w-0.5 h-12" />
           <div className="flex pl-8 pr-3 py-3 gap-8 rounded-full hover:bg-gray-200 focus-within:shadow-xl focus-within:border-l">
@@ -60,7 +73,10 @@ const FormSearch = () => {
               />
             </div>
 
-            <button className="flex items-center justify-center min-w-16 min-h-16 gap-2 p-2 px-4 text-white bg-orange-default rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-200 font-bold">
+            <button
+              className="flex items-center justify-center min-w-16 min-h-16 gap-2 p-2 px-4 text-white bg-orange-default rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-200 font-bold"
+              data-testid="btn-search"
+            >
               <Image
                 src="/icons/search.svg"
                 alt="search button"

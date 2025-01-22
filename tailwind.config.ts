@@ -15,8 +15,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "orange-default": "#F36C21",
-        "gray-700": "#374151",
-        "grady-300": "#D0D5D8",
+        "gray-700": "#393B3D",
+        "gray-600": "#4E5254",
+        "gray-400": "#A1A7AA",
+        "gray-300": "#D0D5D8",
         "gray-200": "#EDF1F4"
       },
     },
