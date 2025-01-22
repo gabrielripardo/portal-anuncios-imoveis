@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getPlaces } from "../services/api";
 import Place from "../models/place.model";
 
@@ -16,10 +16,15 @@ export default function SelectLocation({
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [showSelectLoc, setShowSelectLoc] = useState<boolean>(true);
+  const locationsRef = useRef<HTMLDivElement>(null);
 
-  const closeList = () => {
-    console.log("# clicou fora");
-    setShowSelectLoc(false);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      locationsRef.current &&
+      !locationsRef.current.contains(event.target as Node)
+    ) {
+      setShowSelectLoc(false);
+    }
   };
 
   const fetchData = async () => {
@@ -58,6 +63,10 @@ export default function SelectLocation({
 
   useEffect(() => {
     fetchData();
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   useEffect(() => {
@@ -65,11 +74,11 @@ export default function SelectLocation({
   }, [keyword]);
 
   return (
-    <div className="absolute mt-8" onBlur={closeList}>
+    <div className="absolute mt-8">
       {loading && <p>Pesquisando...</p>}
       {error && <p>Erro: {error}</p>}
       {showSelectLoc && (
-        <div className="border rounded-2xl">
+        <div ref={locationsRef} className="border rounded-2xl">
           <h1 className="px-7 py-4 text-gray-400">
             Busque por cidade, região, bairro ou código
           </h1>
