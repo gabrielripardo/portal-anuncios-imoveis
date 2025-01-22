@@ -70,7 +70,7 @@ export default function SelectLocation({
   }, []);
 
   useEffect(() => {
-    locations.length && changeKeyword();
+    list.length && changeKeyword();
   }, [keyword]);
 
   return (
