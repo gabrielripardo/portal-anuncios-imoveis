@@ -10,7 +10,7 @@ const FormSearch = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-white shadow-md rounded-full pr-3">
+    <div className="w-full flex flex-col items-center justify-center bg-white shadow-md rounded-full border">
       <div className="w-full">
         <div className="flex gap-4 items-center justify-between">
           <div className="px-8 py-3 rounded-full hover:bg-gray-200 focus-within:shadow-xl focus-within:border">
@@ -37,38 +37,40 @@ const FormSearch = () => {
             />
           </div>
           <hr className="bg-gray-300 w-0.5 h-12" />
-          <div>
-            <label
-              htmlFor="rooms"
-              className="flex items-center gap-1 text-sm font-medium text-gray-700 font-semibold"
-            >
+          <div className="flex pl-8 pr-3 py-3 gap-8 rounded-full hover:bg-gray-200 focus-within:shadow-xl focus-within:border-l">
+            <div>
+              <label
+                htmlFor="rooms"
+                className="flex items-center gap-1 text-sm font-medium text-gray-700 font-semibold"
+              >
+                <Image
+                  src="/icons/bed.svg"
+                  alt="search button"
+                  width={28}
+                  height={28}
+                  priority
+                />
+                Nº de Quartos
+              </label>
+              <input
+                type="number"
+                id="rooms"
+                placeholder="Quantos quartos?"
+                className="w-full p-2 rounded-md focus:outline-none"
+              />
+            </div>
+
+            <button className="flex items-center justify-center min-w-16 min-h-16 gap-2 p-2 px-4 text-white bg-orange-default rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-200 font-bold">
               <Image
-                src="/icons/bed.svg"
+                src="/icons/search.svg"
                 alt="search button"
-                width={28}
-                height={28}
+                width={22}
+                height={22}
                 priority
               />
-              Nº de Quartos
-            </label>
-            <input
-              type="number"
-              id="rooms"
-              placeholder="Quantos quartos?"
-              className="w-full p-2 rounded-md focus:outline-none"
-            />
+              {localization != "" && "Buscar"}
+            </button>
           </div>
-
-          <button className="flex items-center justify-center min-w-16 min-h-16 gap-2 p-2 px-4 text-white bg-orange-default rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-200">
-            <Image
-              src="/icons/search.svg"
-              alt="search button"
-              width={22}
-              height={22}
-              priority
-            />
-            {localization != "" && "Buscar"}
-          </button>
         </div>
       </div>
     </div>
