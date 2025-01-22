@@ -7,7 +7,7 @@ import SelectRooms from "./SelectRooms";
 
 const FormSearch = () => {
   const [localization, setLocalization] = useState<string>("");
-  const [showRooms, setShowRooms] = useState<boolean>(true);
+  const [showRooms, setShowRooms] = useState<boolean>(false);
   const [numRooms, setNumRooms] = useState<string>("");
 
   const handleChangeLoc = (event: React.ChangeEvent<HTMLInputElement>) => {

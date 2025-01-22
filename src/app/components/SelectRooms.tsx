@@ -6,6 +6,8 @@ interface WrapperParams {
   changeNumRooms: (numRoom: string) => void;
 }
 
+const btnRooms = ["Todos", "+1", "+2", "+3", "+4"];
+
 export default function SelectRooms({
   numRooms,
   changeNumRooms,
@@ -20,7 +22,9 @@ export default function SelectRooms({
   };
 
   useEffect(() => {
-    console.log("# call SelectRooms");
+    if (numRooms == "") {
+      changeNumRooms("Todos");
+    }
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -35,50 +39,25 @@ export default function SelectRooms({
             <h2 className="text-gray-700">Número de Quartos</h2>
 
             <div className="flex gap-3">
-              <button
-                className="bg-purple-100 text-purple-800 font-semibold ring-1 ring-purple-800 hover:bg-purple-500 hover:text-white rounded-3xl py-2 px-4"
-                onClick={() => changeNumRooms("Todos")}
-              >
-                Todos
-              </button>
-
-              <button
-                className="px-4 text-zinc-600 font-semibold py-2 ring-1 ring-gray-500 rounded-full hover:bg-purple-500 hover:text-white"
-                onClick={() => changeNumRooms("1+")}
-              >
-                1+
-              </button>
-              <button
-                className="px-4 text-zinc-600 font-semibold py-2 ring-1 ring-gray-500 rounded-full hover:bg-purple-500 hover:text-white"
-                onClick={() => changeNumRooms("2+")}
-              >
-                2+
-              </button>
-              <button
-                className="px-4 text-zinc-600 font-semibold py-2 ring-1 ring-gray-500 rounded-full hover:bg-purple-500 hover:text-white"
-                onClick={() => changeNumRooms("3+")}
-              >
-                3+
-              </button>
-              <button
-                className="px-4 text-zinc-600 font-semibold py-2 ring-1 ring-gray-500 rounded-full hover:bg-purple-500 hover:text-white"
-                onClick={() => changeNumRooms("4+")}
-              >
-                4+
-              </button>
+              {btnRooms.map((room) => (
+                <button
+                  key={room}
+                  className={`${
+                    numRooms == room ? "btn-selected" : "btn-light"
+                  }`}
+                  onClick={() => changeNumRooms(room)}
+                >
+                  {room}
+                </button>
+              ))}
             </div>
           </div>
-          <div className="pt-5">
+          {/* <div className="pt-5">
             <h2 className="text-gray-700">Tipo de Propriedade</h2>
-
-            <button className="bg-purple-100 text-purple-800 font-semibold ring-1 ring-purple-800 hover:bg-purple-500 hover:text-white rounded-3xl py-2 px-4">
-              Todos
-            </button>
-
-            <button className="px-4 text-zinc-600 font-semibold py-2 ring-1 ring-gray-500 rounded-full hover:bg-purple-500 hover:text-white">
-              1+
-            </button>
-          </div>
+            <select name="type-house" id="type-house">
+              <option value="Todos os tipos"></option>
+            </select>
+          </div> */}
         </div>
       )}
     </div>
