@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getPlaces } from "../services/api";
 import Place from "../models/place.model";
+import Image from "next/image";
 
 interface WrapperProps {
   onSelectPlace: (place: Place) => void;
@@ -87,9 +88,17 @@ export default function SelectLocation({
               locations.map((location: Place) => (
                 <li
                   key={location.placeId}
-                  className="px-6 py-4 text-gray-600"
+                  className="flex px-6 py-4 text-gray-600"
                   onClick={() => onSelectPlace(location)}
                 >
+                  <Image
+                    className="mr-2"
+                    src="/icons/fill-localization.svg"
+                    alt="search button"
+                    width={22}
+                    height={22}
+                    priority
+                  />
                   <span className="text-gray-700">{location.name}</span> -{" "}
                   {location.state.shortname}
                 </li>
