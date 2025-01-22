@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import SelectLocation from "./SelectLocation";
 import Place from "../models/place.model";
+import SelectRooms from "./SelectRooms";
 
 const FormSearch = () => {
   const [localization, setLocalization] = useState<string>("");
+  const [showRooms, setShowRooms] = useState<boolean>(true);
+  const [numRooms, setNumRooms] = useState<string>("");
 
   const handleChangeLoc = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocalization(event.target.value);
@@ -13,6 +16,18 @@ const FormSearch = () => {
 
   const selectPlace = (place: Place) => {
     setLocalization(`${place.name} - ${place.state.shortname}`);
+  };
+
+  const handleShowRooms = () => {
+    setShowRooms(!showRooms);
+  };
+
+  const changeNumRooms = (numR: string) => {
+    setNumRooms(numR);
+  };
+
+  const handleNumRooms = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNumRooms(event.target.value);
   };
 
   return (
@@ -51,7 +66,7 @@ const FormSearch = () => {
           </div>
           <hr className="bg-gray-300 w-0.5 h-12" />
           <div className="flex pl-8 pr-3 py-3 gap-8 rounded-full hover:bg-gray-200 focus-within:shadow-xl focus-within:border-l">
-            <div>
+            <div onClick={handleShowRooms}>
               <label
                 htmlFor="rooms"
                 className="flex items-center gap-1 text-sm font-medium text-gray-700 font-semibold"
@@ -66,11 +81,20 @@ const FormSearch = () => {
                 Nº de Quartos
               </label>
               <input
-                type="number"
                 id="rooms"
                 placeholder="Quantos quartos?"
-                className="w-full p-2 rounded-md focus:outline-none"
+                className="w-full bg-transparent p-2 rounded-md focus:outline-none"
+                readOnly
+                onChange={handleNumRooms}
+                value={numRooms}
               />
+
+              {showRooms && (
+                <SelectRooms
+                  numRooms={numRooms}
+                  changeNumRooms={changeNumRooms}
+                />
+              )}
             </div>
 
             <button

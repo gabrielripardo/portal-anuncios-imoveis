@@ -88,7 +88,7 @@ export default function SelectLocation({
               locations.map((location: Place) => (
                 <li
                   key={location.placeId}
-                  className="flex px-6 py-4 text-gray-600"
+                  className="flex px-6 py-4 text-gray-600 hover:bg-gray-200"
                   onClick={() => onSelectPlace(location)}
                 >
                   <Image
