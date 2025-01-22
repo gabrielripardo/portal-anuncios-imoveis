@@ -48,14 +48,14 @@ export default function SelectLocation({
     console.log("# list ", list);
     const listFiltered =
       keyword != ""
-        ? list.filter((place: Place) => {
-            console.log("# place into filter ", place);
-            console.log(
-              "# place.name.toLowerCase() ",
-              place.name.toLowerCase()
-            );
-            return place.name.toLowerCase().includes(keyword.toLowerCase());
-          })
+        ? list.filter(
+            (place: Place) =>
+              place.name.toLowerCase().includes(keyword.toLowerCase()) ||
+              place.state.shortname
+                .toLowerCase()
+                .includes(keyword.toLowerCase()) ||
+              place.state.name.toLowerCase().includes(keyword.toLowerCase())
+          )
         : list;
 
     console.log("# listFiltered ", listFiltered);
@@ -99,7 +99,8 @@ export default function SelectLocation({
                     height={22}
                     priority
                   />
-                  <span className="text-gray-700">{location.name}</span> -{" "}
+                  <span className="text-gray-700">{location.name}</span>
+                  &nbsp;-&nbsp;
                   {location.state.shortname}
                 </li>
               ))}
