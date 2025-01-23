@@ -76,10 +76,12 @@ export default function SelectLocation({
 
   return (
     <div className="absolute mt-8">
-      {loading && <p>Pesquisando...</p>}
+      {loading && (
+        <p className="text-white text-bold text-xl">Pesquisando...</p>
+      )}
       {error && <p>Erro: {error}</p>}
       {showSelectLoc && (
-        <div ref={locationsRef} className="border rounded-2xl">
+        <div ref={locationsRef} className="bg-white border rounded-2xl">
           <h1 className="px-7 py-4 text-gray-400">
             Busque por cidade, região, bairro ou código
           </h1>

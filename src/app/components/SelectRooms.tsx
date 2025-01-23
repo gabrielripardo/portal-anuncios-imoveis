@@ -32,13 +32,13 @@ export default function SelectRooms({
   }, []);
 
   return (
-    <div className="absolute mt-8">
+    <div className="absolute mt-8 ">
       {showSelectLoc && (
-        <div ref={roomsRef} className="px-7 py-4 border rounded-2xl">
+        <div ref={roomsRef} className="px-7 py-4 border rounded-2xl bg-white">
           <div className="border-1 border-b border-gray-300 pb-6">
             <h2 className="text-gray-700">Número de Quartos</h2>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 py-4">
               {btnRooms.map((room) => (
                 <button
                   key={room}
