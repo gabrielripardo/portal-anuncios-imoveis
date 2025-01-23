@@ -31,7 +31,7 @@ const FormSearch = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-white shadow-md rounded-full border">
+    <div className="absolute flex flex-col items-center justify-center bg-white shadow-md rounded-full border">
       <div className="w-full">
         <div className="flex gap-4 items-center justify-between">
           <div className="px-8 py-3 rounded-full hover:bg-gray-200 focus-within:shadow-xl focus-within:border">
