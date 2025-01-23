@@ -5,7 +5,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="relative w-full bg-white shadow-md">
+    <nav className="relative w-full py-3 px-6 bg-white shadow-md">
       <div className="px-4 py-2 flex justify-between items-center">
         <Image
           src="/images/logo.png"
@@ -15,29 +15,32 @@ export default function Header() {
           priority
         />
 
-        <div className="hidden md:flex space-x-6">
-          <a href="#" className="text-gray-700 hover:text-blue-500">
+        <div className="hidden md:flex items-center justify-between space-x-6">
+          <a href="#" className="text-zinc-600 hover:text-orange-default  ">
             Imobiliárias
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-500">
+          <a href="#" className="text-zinc-600 hover:text-orange-default  ">
             Quero me Associar
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-500">
+          <a href="#" className="text-zinc-600 hover:text-orange-default  ">
             Sobre
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-500">
+          <a href="#" className="text-zinc-600 hover:text-orange-default  ">
             Blog
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-500">
+        </div>
+
+        <div className="hidden md:flex items-center space-x-6">
+          <a href="#" className="btn-primary">
             Anunciar imóvel
           </a>
-          <a href="#" className="text-gray-700 hover:text-blue-500">
+          <a href="#" className="text-zinc-600 hover:text-orange-default  ">
             Entrar
           </a>
         </div>
 
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-zinc-600 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg
@@ -65,37 +68,37 @@ export default function Header() {
         <div className="z-10 absolute right-0 md:hidden bg-white shadow-lg">
           <a
             href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
           >
             Imobiliárias
           </a>
           <a
             href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
           >
             Quero me Associar
           </a>
           <a
             href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
           >
             Sobre
           </a>
           <a
             href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
           >
             Blog
           </a>
           <a
             href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
           >
             Anunciar imóvel
           </a>
           <a
             href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
           >
             Entrar
           </a>
