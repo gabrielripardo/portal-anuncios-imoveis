@@ -5,11 +5,14 @@
 - Descrição: Site com ferramentas de buscas para compra, aluguel e venda de imóveis no Brasil. Seu layout é preparado pra receber usuários de desktop e mobile. 
 
 ## Tecnlogias
-- [Next.JS](./assets/place.json)
-- [Typescript](./assets/place.json)
-- [Tailwind](./assets/place.json)
-- [Testing Library React](./assets/place.json)
-- [Netlify](./assets/place.json)
+- Next.JS 
+- Typescript
+- Tailwind
+- Testing Library React
+- Netlify
+
+## UI/UX
+- [Figma](https://www.figma.com/design/OwHkEMpGrTEp9InEIKZy4e/Netim%C3%B3veis---Teste-Coodesh?m=auto&t=xlZ6L1K1SolmbkqG-6)
 
 ## Como instalar
 Primeiro, rode o comando do servidor:
