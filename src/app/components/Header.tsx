@@ -15,7 +15,7 @@ export default function Header() {
           priority
         />
 
-        <div className="hidden md:flex items-center justify-between space-x-6">
+        <div className="hidden lg:flex items-center justify-between space-x-6">
           <a href="#" className="text-zinc-600 hover:text-orange-default  ">
             Imobiliárias
           </a>
@@ -30,7 +30,7 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center space-x-6">
           <a href="#" className="btn-primary">
             Anunciar imóvel
           </a>
@@ -40,7 +40,7 @@ export default function Header() {
         </div>
 
         <button
-          className="md:hidden text-zinc-600 focus:outline-none"
+          className="lg:hidden text-zinc-600 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg
@@ -65,7 +65,7 @@ export default function Header() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="z-10 absolute right-0 md:hidden bg-white shadow-lg">
+        <div className="z-10 absolute right-0 lg:hidden bg-white shadow-lg">
           <a
             href="#"
             className="block px-4 py-2 text-zinc-600 hover:bg-gray-100"
