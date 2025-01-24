@@ -1,8 +1,7 @@
 // mockApi
 
 import Place from "../models/place.model";
-import flats from "../../../mocks/flats.json"
-import places from "../../../mocks/places.json"
+import places from "../../../mocks/places.json";
 
 // Função para simular a obtenção de dados da API
 export const getPlaces = async (): Promise<Place[]> => {

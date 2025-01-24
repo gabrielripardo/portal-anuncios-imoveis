@@ -71,7 +71,9 @@ export default function SelectLocation({
   }, []);
 
   useEffect(() => {
-    list.length && changeKeyword();
+    if (list.length) {
+      changeKeyword();
+    }
   }, [keyword]);
 
   return (
