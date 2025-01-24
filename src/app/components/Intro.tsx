@@ -26,11 +26,13 @@ export default function Intro() {
           priority={true}
         />
       </div>
+      <div className="w-full absolute md:top-32 top-28 left-20 md:left-0 px-4 py-6">
+        <p className="w-full z-10 flex flex-col md:flex-row md:space-x-3 justify-center text-white text-orange text-3xl font-bold">
+          <span>Vende. </span> <span>Aluga. </span> <span>Conecta. </span>
+        </p>
+      </div>
       <div className="w-full md:absolute md:top-44 px-4 py-6">
         <div className="w-full z-10 flex flex-col items-center mt-30">
-          <p className="text-white text-3xl font-bold">
-            Vende. Aluga. Conecta.
-          </p>
           <FormSearch />
         </div>
       </div>

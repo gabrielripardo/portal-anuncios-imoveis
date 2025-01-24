@@ -103,9 +103,9 @@ export default function SelectLocation({
                     height={22}
                     priority
                   />
-                  <span className="text-gray-700">{location.name}</span>
-                  &nbsp;-&nbsp;
-                  {location.state.shortname}
+                  <span className="text-gray-700">
+                    {`${location.name}, ${location.state.shortname}`}{" "}
+                  </span>
                 </li>
               ))}
           </ul>
