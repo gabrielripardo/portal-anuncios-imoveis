@@ -1,8 +1,8 @@
 # Front-end Challenge - Netimóveis 20240110
 
 ## Introdução
-# Título: Portal de Anúncios de Imóveis
-# Descrição: Site com ferramentas de buscas para compra, aluguel e venda de imóveis no Brasil. Seu layout é preparado pra receber usuários de desktop e mobile. 
+** Título: Portal de Anúncios de Imóveis**
+** Descrição: Site com ferramentas de buscas para compra, aluguel e venda de imóveis no Brasil. Seu layout é preparado pra receber usuários de desktop e mobile. **
 
 ## Tecnlogias
 - [Next.JS](./assets/place.json)
