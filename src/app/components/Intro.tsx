@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FormSearch from "./FormSearch";
 
-export default function Session1() {
+export default function Intro() {
   return (
     <section className="relative w-full h-[50vh] flex items-center justify-center bg-gray-100">
       <div className="absolute inset-0">
