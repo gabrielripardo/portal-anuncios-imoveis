@@ -3,23 +3,36 @@ import FormSearch from "./FormSearch";
 
 export default function Intro() {
   return (
-    <section className="relative w-full h-[50vh] flex items-center justify-center bg-gray-100">
-      <div className="absolute inset-0">
+    <section className="w-full">
+      <div className="sm:hidden w-full">
         <Image
-          src="/images/starter-banner.png"
-          alt="Background"
-          layout="fill"
-          objectFit="contain"
-          priority={true}
+          src="/images/starter-banner(mobile).png"
+          alt="Descrição da imagem"
+          width={1920}
+          height={1080}
+          layout="responsive"
+          objectFit="cover"
         />
       </div>
 
-      <div className="relative w-full z-10 flex flex-col items-center">
-        <p className="text-white text-3xl -mt-16 font-bold">
-          Vende. Aluga. Conecta.
-        </p>
-
-        <FormSearch />
+      <div className="hidden sm:block inset-0">
+        <Image
+          src="/images/starter-banner.png"
+          alt="Background"
+          width={1980}
+          height={1080}
+          layout="responsive"
+          objectFit="cover"
+          priority={true}
+        />
+      </div>
+      <div className="w-full md:absolute md:top-44 px-4 py-6">
+        <div className="w-full z-10 flex flex-col items-center mt-30">
+          <p className="text-white text-3xl font-bold">
+            Vende. Aluga. Conecta.
+          </p>
+          <FormSearch />
+        </div>
       </div>
     </section>
   );
