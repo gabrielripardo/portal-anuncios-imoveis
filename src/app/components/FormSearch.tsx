@@ -28,10 +28,6 @@ const FormSearch = () => {
     setNumRooms(numR);
   };
 
-  const handleNumRooms = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNumRooms(event.target.value);
-  };
-
   return (
     <div className="md:absolute flex flex-col items-center justify-center bg-white md:shadow-md md:rounded-full">
       <div className="w-full">
