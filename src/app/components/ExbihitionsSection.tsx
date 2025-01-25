@@ -1,7 +1,43 @@
 import Image from "next/image";
 import CardTabs from "./CardTabs";
+import Tab from "../models/tab.model";
 
 export default function ExbihitionsSection() {
+  const tabs: Tab[] = [
+    {
+      id: 0,
+      icon: {
+        url: "/icons/exhibitions/1.svg",
+        size: 28,
+      },
+      title: "Pega Sol",
+      content: {
+        heading: "Sol que ilumina as suas manhãs",
+        paragraph:
+          "Busque imóveis que pegam Sol durante a manhã para que você fique com a vitamina D em dia  ;)",
+        button: (
+          <button className="btn-primary-unrouded">Buscar imóveis</button>
+        ),
+        links: [],
+      },
+    },
+    {
+      id: 1,
+      icon: {
+        url: "/icons/exhibitions/2.svg",
+        size: 28,
+      },
+      title: "Aceitam Pet",
+      content: {
+        heading: "Aceitam Pet",
+        paragraph: "Aceitam Pet",
+        button: (
+          <button className="btn-primary-unrouded">Buscar imóveis</button>
+        ),
+        links: [],
+      },
+    },
+  ];
   return (
     <section className="w-full">
       <div className="sm:hidden relative w-full h-64 mt-4 overflow-hidden">
@@ -32,7 +68,7 @@ export default function ExbihitionsSection() {
       </div>
       <div className="w-full md:absolute md:top-44 px-4 py-6">
         <div className="w-full z-10 flex flex-col items-center mt-30">
-          {/* <CardTabs/> */}
+          <CardTabs tabs={tabs} />
         </div>
       </div>
     </section>
