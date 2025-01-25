@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import SelectDefault from "./SelectDefault";
 
 interface WrapperParams {
   numRooms: string;
@@ -6,6 +7,28 @@ interface WrapperParams {
 }
 
 const btnRooms = ["Todos", "+1", "+2", "+3", "+4"];
+const houseTypes = [
+  {
+    value: "",
+    label: "Todos os tipos",
+  },
+  {
+    value: "casa",
+    label: "Casa",
+  },
+  {
+    value: "apartamento",
+    label: "Apartamento",
+  },
+  {
+    value: "terreno",
+    label: "Terreno",
+  },
+  {
+    value: "comercial",
+    label: "Comercial",
+  },
+];
 
 export default function SelectRooms({
   numRooms,
@@ -31,7 +54,7 @@ export default function SelectRooms({
   }, []);
 
   return (
-    <div className="absolute mt-8 ">
+    <div className="absolute mt-8 -left-20 top-14 md:left-0">
       {showSelectLoc && (
         <div ref={roomsRef} className="px-7 py-4 border rounded-2xl bg-white">
           <div className="border-1 border-b border-gray-300 pb-6">
@@ -51,12 +74,11 @@ export default function SelectRooms({
               ))}
             </div>
           </div>
-          {/* <div className="pt-5">
+          <div className="pt-5">
             <h2 className="text-gray-700">Tipo de Propriedade</h2>
-            <select name="type-house" id="type-house">
-              <option value="Todos os tipos"></option>
-            </select>
-          </div> */}
+
+            <SelectDefault options={houseTypes} />
+          </div>
         </div>
       )}
     </div>

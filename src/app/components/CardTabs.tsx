@@ -38,7 +38,7 @@ export default function CardTabs({ tabs }: WrapperProps) {
         ))}
       </div>
 
-      <div className="h-[288px] p-4 p-7 space-y-6">
+      <div className="sm:h-[288px] h-[300px] p-4 p-7 space-y-6">
         <h2 className="text-xl font-bold text-gray-700 mb-2">
           {tabs[activeTab].content.heading}
         </h2>
