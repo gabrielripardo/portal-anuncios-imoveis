@@ -68,10 +68,7 @@ const FormSearch = () => {
           </div>
           <hr className="hidden md:block bg-gray-300 w-0.5 h-12" />
           <div className="flex w-full md:w-auto pl-8 pr-3 py-3 gap-8 rounded-xl md:rounded-full border md:border-none hover:bg-gray-200 focus-within:shadow-xl focus-within:border-l">
-            <div
-              className="relative bg-red h-full"
-              onClick={() => handleShowRooms()}
-            >
+            <div className="relative bg-red h-full">
               <label
                 htmlFor="rooms"
                 className="flex items-center gap-1 text-sm font-medium text-gray-700 font-semibold"
@@ -91,6 +88,7 @@ const FormSearch = () => {
                 className="w-full bg-transparent p-2 rounded-md focus:outline-none"
                 readOnly
                 value={numRooms}
+                onClick={handleShowRooms}
               />
               <Image
                 className="md:hidden absolute -right-4 top-2"
