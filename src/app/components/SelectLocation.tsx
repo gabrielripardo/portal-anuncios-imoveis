@@ -82,32 +82,31 @@ export default function SelectLocation({
         <p className="text-white text-bold text-xl">Pesquisando...</p>
       )}
       {error && <p>Erro: {error}</p>}
-      {showSelectLoc && (
+      {showSelectLoc && locations.length > 0 && (
         <div ref={locationsRef} className="bg-white border rounded-2xl">
           <h1 className="px-7 py-4 text-gray-400">
             Busque por cidade, região, bairro ou código
           </h1>
           <ul>
-            {locations.length > 0 &&
-              locations.map((location: Place) => (
-                <li
-                  key={location.placeId}
-                  className="flex px-6 py-4 text-gray-600 hover:bg-gray-200"
-                  onClick={() => onSelectPlace(location)}
-                >
-                  <Image
-                    className="mr-2"
-                    src="/icons/fill-localization.svg"
-                    alt="search button"
-                    width={22}
-                    height={22}
-                    priority
-                  />
-                  <span className="text-gray-700">
-                    {`${location.name}, ${location.state.shortname}`}{" "}
-                  </span>
-                </li>
-              ))}
+            {locations.map((location: Place) => (
+              <li
+                key={location.placeId}
+                className="flex px-6 py-4 text-gray-600 hover:bg-gray-200"
+                onClick={() => onSelectPlace(location)}
+              >
+                <Image
+                  className="mr-2"
+                  src="/icons/fill-localization.svg"
+                  alt="search button"
+                  width={22}
+                  height={22}
+                  priority
+                />
+                <span className="text-gray-700">
+                  {`${location.name}, ${location.state.shortname}`}{" "}
+                </span>
+              </li>
+            ))}
           </ul>
         </div>
       )}
