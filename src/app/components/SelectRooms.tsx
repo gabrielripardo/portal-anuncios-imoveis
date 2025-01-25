@@ -54,7 +54,7 @@ export default function SelectRooms({
   }, []);
 
   return (
-    <div className="absolute mt-8 ">
+    <div className="absolute mt-8 -left-20 top-14 md:left-0">
       {showSelectLoc && (
         <div ref={roomsRef} className="px-7 py-4 border rounded-2xl bg-white">
           <div className="border-1 border-b border-gray-300 pb-6">

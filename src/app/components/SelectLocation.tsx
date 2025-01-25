@@ -77,7 +77,7 @@ export default function SelectLocation({
   }, [keyword]);
 
   return (
-    <div className="absolute mt-8">
+    <div className="absolute mt-8 z-10">
       {loading && (
         <p className="text-white text-bold text-xl">Pesquisando...</p>
       )}
